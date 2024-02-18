@@ -20,7 +20,7 @@ class RegisterController extends Controller
         $input = $request->all();
 
         //set validation
-        $validator = Validator::make($request->all(), [
+        $validator = Validator::make($input,[
             'name'      => 'required',
             'email'     => 'required|email|unique:users',
             'password'  => 'required|confirmed'
