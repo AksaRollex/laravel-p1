@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api;
 
 /**
  * route "/register"
@@ -34,3 +35,9 @@ Route::post('/logout', [App\Http\Controllers\Api\LogoutController::class, 'logou
  * @method "POST"
  */
 Route::get('/showData', [App\Http\Controllers\Api\ShowDataController::class, 'show']);
+
+/**
+ * route "/hapus data"
+ * @method "delete"
+ */
+Route::delete('delete/{id}', [App\Http\Controllers\Api\DeleteController::class, 'deleteUser']);

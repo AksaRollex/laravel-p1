@@ -38,12 +38,33 @@ class LoginController extends Controller
             ], 401);
         }
 
+        $user = auth()->guard('api')->user();
+    
+            $role = $user->role_id; 
+            if($role === 1){
+                return response()->json([
+                    'success' => true,
+                    'user' => $user,
+                    'token' => $token,
+                    'message' => 'selamat datang admin',
+                    'role' => $role
+                ], 200);
+            }elseif($role === 2){
+                return response()->json([
+                    'success' => true,
+                    'user' => $user,
+                    'token' => $token,
+                    'message' => 'selamat datang user',
+                    'role' => $role
+
+                ], 200);
+            }
+
         //if auth success
         return response()->json([
             'success' => true,
             'user'    => auth()->guard('api')->user(),    
-            'token'   => $token,
-            'message' => 'Selamat Datang User' 
+            'token'   => $token
         ], 200);
     }
 }
