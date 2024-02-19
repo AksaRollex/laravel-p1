@@ -28,3 +28,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
  * @method "POST"
  */
 Route::post('/logout', [App\Http\Controllers\Api\LogoutController::class, 'logout']);
+
+/**
+ * route "/show data"
+ * @method "POST"
+ */
+Route::get('/showData', [App\Http\Controllers\Api\ShowDataController::class, 'show']);
