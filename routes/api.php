@@ -41,3 +41,7 @@ Route::get('/showData', [App\Http\Controllers\Api\ShowDataController::class, 'sh
  * @method "delete"
  */
 Route::delete('delete/{id}', [App\Http\Controllers\Api\DeleteController::class, 'deleteUser']);
+
+
+Route::get('get/{id}', [App\Http\Controllers\Api\RegisterController::class, 'getUser']);
+Route::post('update/{id}', [App\Http\Controllers\Api\RegisterController::class, 'updateUser']);
