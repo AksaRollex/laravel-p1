@@ -53,7 +53,7 @@ class RegisterController extends Controller
         ], 409);
     }
     
-    public function get_data($id){
+    public function getUser($id){
         $use = User::find($id);
         return response()->json($use);
     }
@@ -67,7 +67,7 @@ class RegisterController extends Controller
             'success' => true,
             'user'    => $usr,
             'status' => 200,
-            'message' => 'Successfully Edit Data' 
+            'message' => 'Data Berhasil Di Rubah !' 
         ], 200);
     }
 }

@@ -13,12 +13,12 @@ class DeleteController extends Controller
         if($usr){
             $usr->delete();
             return response()->json([
-                'message' => "Data successfully deleted",
+                'message' => "Data Berhasil Di Hapus !",
                 'code' => 200
             ]);
         }else{
             return response([
-                'message' => "Failed delete data $id / data doesn't exists"
+                'message' => "Data Gagal Di Hapus $id / Data Tidak Ada"
             ]);
         }
     }
