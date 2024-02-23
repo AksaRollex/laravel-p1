@@ -15,6 +15,7 @@ Route::post('/registcak', [App\Http\Controllers\Api\RegisterController::class, '
  * @method "POST"
  */
 Route::post('/logincak', [App\Http\Controllers\Api\LoginController::class, 'check']);
+Route::post('/logincak2', [App\Http\Controllers\Api\LoginUsernameController::class, 'check2']);
 
 /**
  * route "/user"
